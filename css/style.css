@@ -16,6 +16,18 @@
        url("../fonts/ptsansbold.woff") format("woff");
 }
 
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
 html,
 body {
   min-width: 768px;
@@ -24,21 +36,26 @@ body {
   font-size: 14px;
   line-height: 21px;
   font-family: "PT Sans", "Helvectica", sans-serif;
+  text-transform: uppercase;
+  color: #000;
 }
 
 .container {
-  width: 100%;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 6%;
 }
 
 .header__inner {
   position: relative;
+  padding: 0 6%;
 }
 
 .header__logo {
   position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -69px;
 }
 
 .main-nav {
@@ -47,30 +64,176 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  width: 100%;
   margin: 0;
   padding: 0;
-  width: 100%;
+  text-align: left;
   list-style: none;
+  background-color: #fff;
 }
 
 .main-nav__item {
-  width: 20%;
+  width: 22.7%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.main-nav__item-right {
+  text-align: right;
 }
 
 .main-nav__item:nth-child(2) {
-  margin-right: 4%;
+  margin-right: 9.2%;
 }
 
 .main-nav__link {
-  display: block;
-  padding-top: 20px;
-  padding-bottom: 20px;
   font-weight: 700;
   line-height: 26px;
-  text-transform: uppercase;
   text-decoration: none;
   color: #000;
+}
+
+.main-nav__link:hover {
+  color: #81b3d2;
+}
+
+.main-nav__link:focus {
+  color: #766357;
+}
+
+.main-nav__link:active {
+  opacity: 0.3;
+}
+
+.intro {
+  width: 100%;
+  min-height: 509px;
+  background-image: url("../img/bg-mask.png"),
+                    url("../img/bg-promo.png"),
+                    url("../img/bg.jpg");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 100% 57px, 458px 352px, 100% 100%;
+  background-position: 0 bottom, center, 50% 28%;
+}
+
+.advantages__inner {
+  padding-top: 60px;
+}
+
+.main-title {
+  width: 445px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+}
+
+.advantages__promo {
+  width: 490px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  line-height: 26px;
+  text-align: center;
+}
+
+.advantages__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-between;
+      -ms-flex-pack: space-between;
+          justify-content: space-between;
+}
+
+.advantages__main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  color: #fff;
+  background-color: #81b3d2;
+}
+
+.advantages__bottom {
+  background-color: #eee;
+}
+
+.advantages__photo {
+  position: absolute;
+  top: 0;
+  left: 33%;
+  width: 67%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.advantages__img {
+  width: 100%;
+}
+
+.advantages__item {
+  -ms-flex-preferred-size: 33.3%;
+      flex-basis: 33.3%;
+  text-align: center;
+}
+
+.advantages__title {
+  margin-bottom: 25px;
+  font-size: 21px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.advantages__number {
+  margin-bottom: 20px;
+}
+
+.advantages__text {
+  text-align: center;
+  color: #333;
+}
+
+.advantages__accommodations {
+  position: relative;
+  padding-top: 160px;
+  padding-bottom: 82px;
+}
+
+.advantages__accommodations::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+}
+
+.advantages__hotel::before {
+  top: 58px;
+  width: 75px;
+  height: 72px;
+  margin-left: -37px;
+  background-image: url("../img/advantages-hotel.svg");
+  background-repeat: no-repeat;
+}
+
+.advantages__food::before {
+  top: 59px;
+  width: 74px;
+  height: 70px;
+  margin-left: -37px;
+  background-image: url("../img/advantages-food.svg");
+  background-repeat: no-repeat;
+}
+
+.advantages__souvenirs::before {
+  top: 55px;
+  width: 64px;
+  height: 76px;
+  margin-left: -35px;
+  background-image: url("../img/advantages-souvenir.svg");
+  background-repeat: no-repeat;
 }
