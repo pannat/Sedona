@@ -37,13 +37,16 @@ body {
   line-height: 21px;
   font-family: "PT Sans", "Helvectica", sans-serif;
   text-transform: uppercase;
+  word-wrap: break-word;
   color: #000;
+  background: #f2f2f2;
 }
 
 .container {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  background: #fff;
 }
 
 .header__inner {
@@ -112,8 +115,8 @@ body {
                     url("../img/bg-promo.png"),
                     url("../img/bg.jpg");
   background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: 100% 57px, 458px 352px, 100% 100%;
-  background-position: 0 bottom, center, 50% 28%;
+  background-size: 100.2% 57px, 458px 352px, 100% 100%;
+  background-position: -1px bottom, 50% 49%, 50% 28%;
 }
 
 .advantages__inner {
@@ -133,7 +136,7 @@ body {
 .advantages__promo {
   width: 490px;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 52px;
   line-height: 26px;
   text-align: center;
 }
@@ -144,18 +147,11 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: space-between;
-      -ms-flex-pack: space-between;
-          justify-content: space-between;
 }
 
 .advantages__main {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: 100%;
-  color: #fff;
   background-color: #81b3d2;
 }
 
@@ -165,12 +161,20 @@ body {
 
 .advantages__photo {
   position: absolute;
-  top: 0;
-  left: 33%;
-  width: 67%;
+  width: 66.66666%;
   height: 100%;
   margin: 0;
   overflow: hidden;
+}
+
+.advantages__photo-right {
+  top: 0;
+  left: 33.35%;
+}
+
+.advantages__photo-left {
+  top: 0;
+  right: 33.3%;
 }
 
 .advantages__img {
@@ -178,25 +182,23 @@ body {
 }
 
 .advantages__item {
-  -ms-flex-preferred-size: 33.3%;
-      flex-basis: 33.3%;
+  width: 33.33334%;
+  min-height: 256px;
   text-align: center;
+  padding-top: 46px;
+  padding-right: 4.5%;
+  padding-left: 4.5%;
+  padding-bottom: 20px;
 }
 
-.advantages__title {
-  margin-bottom: 25px;
-  font-size: 21px;
-  line-height: 21px;
-  text-align: center;
+.advantages__real-city {
+  margin-right: auto;
 }
 
-.advantages__number {
-  margin-bottom: 20px;
-}
-
-.advantages__text {
-  text-align: center;
-  color: #333;
+.advantages__bridge-of-devil {
+  margin-left: auto;
+  padding-right: 4%;
+  padding-left: 4%;
 }
 
 .advantages__accommodations {
@@ -236,4 +238,28 @@ body {
   margin-left: -35px;
   background-image: url("../img/advantages-souvenir.svg");
   background-repeat: no-repeat;
+}
+
+.advantages__title {
+  width: 155px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  font-size: 21px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.advantages__text {
+  margin: 0;
+  text-align: center;
+  color: #333;
+}
+
+.advantages__number {
+  margin-bottom: 20px;
+}
+
+.advantages__main-title,
+.advantages__main-text {
+  color: #fff;
 }
