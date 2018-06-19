@@ -28,6 +28,34 @@ html {
   box-sizing: inherit;
 }
 
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #766357;
+}
+
 html,
 body {
   min-width: 768px;
@@ -43,13 +71,18 @@ body {
 }
 
 .container {
+  position: relative;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   background: #fff;
+  -webkit-box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.2),
+                      -5px 0 15px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.2),
+                      -5px 0 15px 0 rgba(0, 0, 0, 0.2);
 }
 
-.header__inner {
+.header {
   position: relative;
   padding: 0 6%;
 }
@@ -119,7 +152,7 @@ body {
   background-position: -1px bottom, 50% 49%, 50% 28%;
 }
 
-.advantages__inner {
+.advantages {
   padding-top: 60px;
 }
 
@@ -170,15 +203,19 @@ body {
 .advantages__photo-right {
   top: 0;
   left: 33.35%;
+  background-image: url("../img/real-city.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 53.5%;
 }
 
 .advantages__photo-left {
   top: 0;
   right: 33.3%;
-}
-
-.advantages__img {
-  width: 100%;
+  background-image: url("../img/bridge-of-devil.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 52.5%;
 }
 
 .advantages__item {
@@ -207,37 +244,31 @@ body {
   padding-bottom: 82px;
 }
 
-.advantages__accommodations::before {
-  content: "";
+.advantages__icon {
   position: absolute;
   left: 50%;
+  fill: #81B3D2;
 }
 
-.advantages__hotel::before {
+.advantages__icon-home {
   top: 58px;
   width: 75px;
   height: 72px;
   margin-left: -37px;
-  background-image: url("../img/advantages-hotel.svg");
-  background-repeat: no-repeat;
 }
 
-.advantages__food::before {
+.advantages__icon-food {
   top: 59px;
   width: 74px;
   height: 70px;
   margin-left: -37px;
-  background-image: url("../img/advantages-food.svg");
-  background-repeat: no-repeat;
 }
 
-.advantages__souvenirs::before {
+.advantages__icon-souvenir {
   top: 55px;
   width: 64px;
   height: 76px;
   margin-left: -35px;
-  background-image: url("../img/advantages-souvenir.svg");
-  background-repeat: no-repeat;
 }
 
 .advantages__title {
@@ -262,4 +293,143 @@ body {
 .advantages__main-title,
 .advantages__main-text {
   color: #fff;
+}
+
+.offer {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.offer__question {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0 6%;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.offer__text {
+  margin: 0 auto;
+  margin-bottom: 45px;
+  width: 440px;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.offer__btn {
+  padding: 30px 140px;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.offer__btn:hover,
+.offer__btn:focus {
+  outline: none;
+  background-color: #604e43;
+}
+
+.offer__btn:active {
+  background-color: #503e33;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.map {
+  min-height: 594px;
+}
+
+.map iframe {
+  width: 100%;
+  min-height: 594px;
+  border: none;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.footer__hashtag {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.footer__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 151px;
+  vertical-align: top;
+}
+
+.footer__social-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 46px;
+  height: 48px;
+  background-color: #81b3d2;
+}
+
+.footer__social-link:hover,
+.footer__social-link:focus {
+  outline: none;
+  background-color: #669ec0;
+}
+
+.footer__social-link:active {
+  background-color: #5496bd;
+}
+
+.footer__social-link:active .footer__icon {
+  opacity: 0.3;
+}
+
+.footer__icon-tw {
+  width: 17px;
+  height: 15px;
+}
+
+.footer__icon-fb {
+  width: 12px;
+  height: 22px;
+}
+
+.footer__icon-youtube {
+  width: 20px;
+  height: 16px;
+}
+
+.footer__logo-htmlacademy {
+  fill: #231f20;
+}
+
+.footer__logo-htmlacademy:hover,
+.footer__logo-htmlacademy:focus {
+  fill: #81b3d2;
+}
+
+.footer__logo-htmlacademy:active {
+  fill: #bdbbbc;
+}
+
+.sprite {
+  display: none;
 }
