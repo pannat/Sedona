@@ -114,7 +114,7 @@ body {
   padding-bottom: 15px;
 }
 
-.main-nav__item-right {
+.main-nav__item--right {
   text-align: right;
 }
 
@@ -156,7 +156,7 @@ body {
   padding-top: 60px;
 }
 
-.main-title {
+.advantages__title {
   width: 445px;
   margin: 0 auto;
   margin-bottom: 25px;
@@ -166,7 +166,7 @@ body {
   text-align: center;
 }
 
-.advantages__promo {
+.advantages__text {
   width: 490px;
   margin: 0 auto;
   margin-bottom: 52px;
@@ -182,7 +182,11 @@ body {
       flex-wrap: wrap;
 }
 
-.advantages__main {
+.advantages__row--gray {
+  background-color: #eee;
+}
+
+.advantages__main-item {
   position: relative;
   width: 100%;
   background-color: #81b3d2;
@@ -192,7 +196,7 @@ body {
   background-color: #eee;
 }
 
-.advantages__photo {
+.advantages-main-item__photo {
   position: absolute;
   width: 66.66666%;
   height: 100%;
@@ -200,7 +204,7 @@ body {
   overflow: hidden;
 }
 
-.advantages__photo-right {
+.advantages-main-item__photo--right {
   top: 0;
   left: 33.35%;
   background-image: url("../img/real-city.jpg");
@@ -209,7 +213,7 @@ body {
   background-position: 0 53.5%;
 }
 
-.advantages__photo-left {
+.advantages-main-item__photo--left {
   top: 0;
   right: 33.3%;
   background-image: url("../img/bridge-of-devil.jpg");
@@ -228,11 +232,11 @@ body {
   padding-bottom: 20px;
 }
 
-.advantages__real-city {
+.advantages-item--left {
   margin-right: auto;
 }
 
-.advantages__bridge-of-devil {
+.advantages-item--right {
   margin-left: auto;
   padding-right: 4%;
   padding-left: 4%;
@@ -244,34 +248,34 @@ body {
   padding-bottom: 82px;
 }
 
-.advantages__icon {
+.advantages-item__icon {
   position: absolute;
   left: 50%;
-  fill: #81B3D2;
+  fill: #81b3d2;
 }
 
-.advantages__icon-home {
+.advantages-item__icon-home {
   top: 58px;
   width: 75px;
   height: 72px;
   margin-left: -37px;
 }
 
-.advantages__icon-food {
+.advantages-item__icon-food {
   top: 59px;
   width: 74px;
   height: 70px;
   margin-left: -37px;
 }
 
-.advantages__icon-souvenir {
+.advantages-item__icon-souvenir {
   top: 55px;
   width: 64px;
   height: 76px;
   margin-left: -35px;
 }
 
-.advantages__title {
+.advantages-item__title {
   width: 155px;
   margin: 0 auto;
   margin-bottom: 25px;
@@ -280,18 +284,18 @@ body {
   text-align: center;
 }
 
-.advantages__text {
+.advantages-item__text {
   margin: 0;
   text-align: center;
   color: #333;
 }
 
-.advantages__number {
+.advantages-item__number {
   margin-bottom: 20px;
 }
 
-.advantages__main-title,
-.advantages__main-text {
+.advantages-main-item__title,
+.advantages-main-item__text {
   color: #fff;
 }
 
@@ -356,7 +360,7 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-.footer__hashtag {
+.socials__text {
   font-weight: 700;
   font-size: 21px;
   line-height: 26px;
@@ -373,7 +377,7 @@ body {
   vertical-align: top;
 }
 
-.footer__social-link {
+.socials__link {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -388,31 +392,31 @@ body {
   background-color: #81b3d2;
 }
 
-.footer__social-link:hover,
-.footer__social-link:focus {
+.socials__link:hover,
+.socials__link:focus {
   outline: none;
   background-color: #669ec0;
 }
 
-.footer__social-link:active {
+.socials__link:active {
   background-color: #5496bd;
 }
 
-.footer__social-link:active .footer__icon {
+.socials__link:active .footer__icon {
   opacity: 0.3;
 }
 
-.footer__icon-tw {
+.socials-icon--twitter {
   width: 17px;
   height: 15px;
 }
 
-.footer__icon-fb {
+.socials-icon--fb {
   width: 12px;
   height: 22px;
 }
 
-.footer__icon-youtube {
+.socials-icon--youtube {
   width: 20px;
   height: 16px;
 }
