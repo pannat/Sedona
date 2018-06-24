@@ -46,7 +46,7 @@ button {
   overflow: hidden;
 }
 
-.btn {
+.button {
   display: inline-block;
   font-weight: 700;
   font-size: 14px;
@@ -155,7 +155,7 @@ body {
   background-position: -1px bottom, 50% 49%, 50% 28%;
 }
 
-.advantages {
+.advantages__header {
   padding-top: 60px;
 }
 
@@ -170,14 +170,14 @@ body {
 }
 
 .advantages__text {
-  width: 490px;
+  width: 495px;
   margin: 0 auto;
   margin-bottom: 52px;
   line-height: 26px;
   text-align: center;
 }
 
-.advantages__row {
+.advantages__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,47 +185,16 @@ body {
       flex-wrap: wrap;
 }
 
-.advantages__row--gray {
-  background-color: #eee;
-}
-
-.advantages__main-item {
+.advantage-main {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   background-color: #81b3d2;
 }
 
-.advantages__bottom {
-  background-color: #eee;
-}
-
-.advantages-main-item__photo {
-  position: absolute;
-  width: 66.66666%;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-}
-
-.advantages-main-item__photo--right {
-  top: 0;
-  left: 33.35%;
-  background-image: url("../img/real-city.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 53.5%;
-}
-
-.advantages-main-item__photo--left {
-  top: 0;
-  right: 33.3%;
-  background-image: url("../img/bridge-of-devil.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 52.5%;
-}
-
-.advantages__item {
+.advantage-main__item {
   width: 33.33334%;
   min-height: 256px;
   text-align: center;
@@ -233,52 +202,55 @@ body {
   padding-right: 4.5%;
   padding-left: 4.5%;
   padding-bottom: 20px;
+  color: #ffffff;
 }
 
-.advantages-item--left {
+.advantage-main__item--left {
   margin-right: auto;
 }
 
-.advantages-item--right {
+.advantage-main__item--right {
   margin-left: auto;
   padding-right: 4%;
   padding-left: 4%;
 }
 
-.advantages__accommodations {
-  position: relative;
-  padding-top: 160px;
-  padding-bottom: 82px;
-}
-
-.advantages-item__icon {
+.advantage-main__photo {
   position: absolute;
-  left: 50%;
-  fill: #81b3d2;
+  top: 0;
+  width: 66.66666%;
+  height: 100%;
+  margin: 0;
+  background-image: url("../img/real-city.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 
-.advantages-item__icon-home {
-  top: 58px;
-  width: 75px;
-  height: 72px;
-  margin-left: -37px;
+.advantage-main__photo--city {
+  left: 33.35%;
+  background-position: 0 53.5%;
 }
 
-.advantages-item__icon-food {
-  top: 59px;
-  width: 74px;
-  height: 70px;
-  margin-left: -37px;
+.advantage-main__photo--bridge {
+  right: 33.3%;
+  background-image: url("../img/bridge-of-devil.jpg");
+  background-position: 0 52.5%;
 }
 
-.advantages-item__icon-souvenir {
-  top: 55px;
-  width: 64px;
-  height: 76px;
-  margin-left: -35px;
+.advantage-item {
+  width: 33.33334%;
+  min-height: 256px;
+  text-align: center;
+  padding-top: 46px;
+  padding-right: 4.5%;
+  padding-left: 4.5%;
+  padding-bottom: 20px;
+  background-color: #eeeeee;
 }
 
-.advantages-item__title {
+.advantage-main__title,
+.advantage-item__title {
   width: 155px;
   margin: 0 auto;
   margin-bottom: 25px;
@@ -287,19 +259,50 @@ body {
   text-align: center;
 }
 
-.advantages-item__text {
+.advantage-main__text,
+.advantage-item__text, {
   margin: 0;
   text-align: center;
   color: #333;
 }
 
-.advantages-item__number {
+.advantage-main__text--number,
+.advantage-item__text--number {
   margin-bottom: 20px;
 }
 
-.advantages-main-item__title,
-.advantages-main-item__text {
-  color: #fff;
+.advantage-item--accommodations {
+  position: relative;
+  padding-top: 160px;
+  padding-bottom: 82px;
+  background-color: #ffffff;
+}
+
+.advantage-item__icon {
+  position: absolute;
+  left: 50%;
+  fill: #81b3d2;
+}
+
+.advantage-item__icon--home {
+  top: 58px;
+  width: 75px;
+  height: 72px;
+  margin-left: -37px;
+}
+
+.advantage-item__icon--food {
+  top: 59px;
+  width: 74px;
+  height: 70px;
+  margin-left: -37px;
+}
+
+.advantage-item__icon--souvenir {
+  top: 55px;
+  width: 64px;
+  height: 76px;
+  margin-left: -35px;
 }
 
 .offer {
@@ -325,19 +328,19 @@ body {
   text-align: center;
 }
 
-.offer__btn {
+.offer__button {
   padding: 30px 140px;
   font-size: 21px;
   line-height: 26px;
 }
 
-.offer__btn:hover,
-.offer__btn:focus {
+.offer__button:hover,
+.offer__button:focus {
   outline: none;
   background-color: #604e43;
 }
 
-.offer__btn:active {
+.offer__button:active {
   background-color: #503e33;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -353,31 +356,63 @@ body {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  padding: 37px 0;
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-.socials__text {
-  font-weight: 700;
-  font-size: 21px;
-  line-height: 26px;
+.page__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
-.footer__social {
+.socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 67%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 151px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   vertical-align: top;
+}
+
+.socials__hashtag {
+  width: 50%;
+  margin: 0;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+}
+
+.socials__community {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socials__channel {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.socials__channel:last-child {
+  margin-right: none;
 }
 
 .socials__link {
@@ -405,7 +440,7 @@ body {
   background-color: #5496bd;
 }
 
-.socials__link:active .footer__icon {
+.socials__link:active .socials__icon {
   opacity: 0.3;
 }
 
@@ -424,16 +459,38 @@ body {
   height: 16px;
 }
 
-.footer__logo-htmlacademy {
+.copyright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 33%;
+}
+
+.copyright__link {
+  position: relative;
+  display: block;
+  width: 197px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.copyright__icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -30px;
   fill: #231f20;
 }
 
-.footer__logo-htmlacademy:hover,
-.footer__logo-htmlacademy:focus {
+.copyright__link:hover .copyright__icon,
+.copyright__link:focus .copyright__icon {
   fill: #81b3d2;
 }
 
-.footer__logo-htmlacademy:active {
+.copyright__link:active .copyright__icon {
   fill: #bdbbbc;
 }
 
