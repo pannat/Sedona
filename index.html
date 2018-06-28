@@ -117,6 +117,7 @@
           <a class="button offer__button" href="#">Поиск гостиницы в Седоне</a>
           <section class="offer__modal modal">
             <form class="modal__form form" method="post" action="echo/htmlacademy.ru">
+<<<<<<< HEAD
               <p class="form__group">
                 <label class="form__label" for="date-arrival">Дата заезда:</label>
                 <span class="field">
@@ -164,6 +165,47 @@
                     <span class="visually-hidden">Увеличить</span>
                   </button>
                 </span>
+=======
+              <p class="form__item form-item">
+                <label class="form-item__label" for="date-arrival">Дата заезда:</label>
+                <input class="form-item__input" type="text" name="date-arrival" id="date-arrival" value="24 апреля 2017">
+                <button class="form-item__button form-item__button--calendar" type="button">
+                  <span class="visually-hidden">Открыть календарь</span>
+                  <svg class="form-item__icon" width="21" height="22">
+                    <use xlink:href="#calendar"></use>
+                  </svg>
+                </button>
+              </p>
+              <p class="form__item form-item">
+                <label class="form-item__label" for="date-of-departure">Дата выезда:</label>
+                <input class="form-item__input" type="text" name="date-of-departure" id="date-of-departure" value="4 июля 2017">
+                <button class="form-item__button form-item__button--calendar" type="button">
+                  <span class="visually-hidden">Открыть календарь</span>
+                  <svg class="form-item__icon" width="21" height="22">
+                    <use xlink:href="#calendar"></use>
+                  </svg>
+                </button>
+              </p>
+              <p class="form__item form-item form-item--adults">
+                <label class="form-item__label" for="adults">Взрослые:</label>
+                <button class="form-item__button form-item__button--down">
+                  <span class="visually-hidden">Уменьшить</span>
+                </button>
+                <input class="form-item__input form-item__input--number" type="text" id="adults" value="2" readonly>
+                <button class="form-item__button form-item__button--up">
+                  <span class="visually-hidden">Увеличить</span>
+                </button>
+              </p>
+              <p class="form__item form-item form-item--children">
+                <label class="form-item__label" for="children">Дети:</label>
+                  <button class="form-item__button form-item__button--down">
+                    <span class="visually-hidden">Уменьшить</span>
+                  </button>
+                  <input class="form-item__input form-item__input--number" type="text" id="children" value="0" readonly>
+                  <button class="form-item__button form-item__button--up">
+                    <span class="visually-hidden">Увеличить</span>
+                  </button>
+>>>>>>> f8cb17f7ed9502bbf5d416c23f3decb01a48d038
               </p>
               <a class="button form__button" href="#">Найти</a>
             </form>

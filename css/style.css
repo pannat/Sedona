@@ -374,7 +374,12 @@ button {
           justify-content: space-between;
 }
 
+<<<<<<< HEAD
 .form__group {
+=======
+.form-item {
+  position: relative;
+>>>>>>> f8cb17f7ed9502bbf5d416c23f3decb01a48d038
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -421,15 +426,24 @@ button {
   font-weight: 700;
   line-height: 26px;
   text-transform: uppercase;
+  vertical-align: middle;
   background-color: #f2f2f2;
   border: none;
 }
 
+<<<<<<< HEAD
 .field__input:hover {
   background-color: #ebebeb;
 }
 
 .field__input:focus {
+=======
+.form-item__input:hover {
+  background-color: #ebebeb;
+}
+
+.form-item__input:focus {
+>>>>>>> f8cb17f7ed9502bbf5d416c23f3decb01a48d038
   background-color: #fff;
   outline: none;
   -webkit-box-shadow: inset 2px 2px 0 0 #ebebeb,
@@ -438,6 +452,7 @@ button {
                       inset -2px -2px 0 0 #ebebeb;
 }
 
+<<<<<<< HEAD
 .field__input::-ms-clear {
    display: none;
 }
@@ -477,6 +492,9 @@ button {
 }
 
 .spinner__input {
+=======
+.form-item__input--number {
+>>>>>>> f8cb17f7ed9502bbf5d416c23f3decb01a48d038
   width: 114px;
   height: 38px;
   padding: 6px 38px;
@@ -499,6 +517,7 @@ button {
   background-color: transparent;
 }
 
+<<<<<<< HEAD
 .spinner__button--down {
   left: 0;
 }
@@ -524,13 +543,60 @@ button {
   top: 18px;
   right: 13px;
   width: 11px;
+=======
+.form-item__input--number:hover {
+  background-color: #f2f2f2;
+}
+
+.form-item__input--number:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #f2f2f2;
+}
+
+.form-item__button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -11px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.form-item__button--up,
+.form-item__button--down {
+  width: 38px;
+  height: 38px;
+}
+
+.form-item__button--up:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+>>>>>>> f8cb17f7ed9502bbf5d416c23f3decb01a48d038
   height: 3px;
   background-color: #a9a9a9;
 }
 
+<<<<<<< HEAD
 .spinner__button--up::before {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+=======
+.form-item__icon {
+  fill: #cacaca;
+}
+
+.form-item__button:hover .form-item__icon,
+.form-item__button:focus .form-item__icon {
+  fill: #000000;
+}
+
+.form-item__button:active .form-item__icon {
+  fill: #81b3d2;
+>>>>>>> f8cb17f7ed9502bbf5d416c23f3decb01a48d038
 }
 
 .form__button {
