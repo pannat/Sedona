@@ -3,8 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>City of Sedona</title>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='js/svg4everybody.js'></script>
+    <script>
+      svg4everybody();
+    </script>
   </head>
   <body class="page">
     <div class="page__container">
@@ -38,7 +42,7 @@
               Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!
             </p>
           </header>
-          <section class="advantages__wrapper">
+          <section class="advantages__items">
             <h2 class="visually-hidden">Список преимуществ</h2>
             <div class="advantage-main">
               <p class="advantage-main__photo advantage-main__photo--city"></p>
@@ -51,25 +55,16 @@
               </div>
             </div>
             <div class="advantage-item advantage-item--accommodations">
-              <svg class="advantage-item__icon advantage-item__icon--home" width="75" height="72">
-                <use xlink:href="img/sprite.svg#home"></use>
-              </svg>
-              <h2 class="advantage-item__title">Жильё</h2>
+              <h2 class="advantage-item__title advantage-item__title--home">Жильё</h2>
               <p class="advantage-item__text">Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
             </div>
             <div class="advantage-item advantage-item--accommodations">
-              <svg class="advantage-item__icon advantage-item__icon--food" width="74" height="70">
-                <use xlink:href="#food"></use>
-              </svg>
-              <h2 class="advantage-item__title">Еда</h2>
+              <h2 class="advantage-item__title advantage-item__title--food">Еда</h2>
               <p class="advantage-item__text">Всегда заказывайте фирменный бургер, вы не разочаруетесь!
               </p>
             </div>
             <div class="advantage-item advantage-item--accommodations">
-              <svg class="advantage-item__icon advantage-item__icon--souvenir" width="64" height="76">
-                <use xlink:href="#souvenir"></use>
-              </svg>
-              <h2 class="advantage-item__title">Сувениры</h2>
+              <h2 class="advantage-item__title advantage-item__title--souvenir">Сувениры</h2>
               <p class="advantage-item__text">Не только китайского, но и местного производства!</p>
             </div>
             <div class="advantage-main">
@@ -114,9 +109,10 @@
           <p class="offer__question">Заинтересовались?</p>
           <p class="offer__text">Укажите предполагаемые даты поездки,<br>
   и мы покажем вам лучшие предложения гостиниц в седоне</p>
-          <a class="button offer__button" href="#">Поиск гостиницы в Седоне</a>
+          <a class="button button--open-form" href="#">Поиск гостиницы в Седоне</a>
           <section class="offer__modal modal">
-            <form class="modal__form form" method="post" action="echo/htmlacademy.ru">
+            <h2 class="visually-hidden">Анкета для поиска гостиницы в Седоне</h2>
+            <form class="modal__form form" method="post" action="https://echo.htmlacademy.ru" autocomplete="off">
               <p class="form__group">
                 <label class="form__label" for="date-arrival">Дата заезда:</label>
                 <span class="field">
@@ -147,7 +143,7 @@
                   <button class="spinner__button spinner__button--down" type="button">
                     <span class="visually-hidden">Уменьшить</span>
                   </button>
-                  <input class="spinner__input" type="text" id="adults" value="2" readonly>
+                  <input class="spinner__input spinner__input--required" type="text" name="adults" id="adults" value="2">
                   <button class="spinner__button spinner__button--up" type="button">
                     <span class="visually-hidden">Увеличить</span>
                   </button>
@@ -159,13 +155,15 @@
                   <button class="spinner__button spinner__button--down" type="button">
                     <span class="visually-hidden">Уменьшить</span>
                   </button>
-                  <input class="spinner__input" type="text" id="children" value="0" readonly>
+                  <input class="spinner__input" type="text" name="children" id="children" value="0">
                   <button class="spinner__button spinner__button--up" type="button">
                     <span class="visually-hidden">Увеличить</span>
                   </button>
                 </span>
               </p>
-              <a class="button form__button" href="#">Найти</a>
+              <button class="button button--submit button--blue" href="#">
+                <span class="button__text">Найти</span>
+              </button>
             </form>
           </section>
           <div class="map">
@@ -215,23 +213,6 @@
     </div>
 
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none">
-      <symbol id="home" viewBox="0 0 75 72">
-        <g fill="#81B3D2">
-          <path d="M29.656 65.033h16V41.21h-16v23.823zm2.937-20.899h10.125V62.11H32.593V44.134z"/>
-          <path d="M72.771 39.253l2.076-2.068-9.908-9.865V0H51.127v13.567L37.5 0 .152 37.185l2.077 2.068 7.832-7.795v37.618H6.124V72h63.875v-2.924H64.94V31.458l7.831 7.795zM62.002 69.076H12.999V28.534L37.5 4.149l24.502 24.385v40.542zm0-44.682l-7.938-7.902V2.924h7.938v21.47z"/>
-          <path d="M29.906 27.08c0 4.261 3.47 7.713 7.75 7.713 4.279 0 7.75-3.452 7.75-7.713 0-4.259-3.471-7.713-7.75-7.713-4.281 0-7.75 3.454-7.75 7.713zm7.75-4.945c2.744 0 4.969 2.214 4.969 4.945 0 2.732-2.225 4.948-4.969 4.948-2.746 0-4.97-2.216-4.97-4.948 0-2.731 2.225-4.945 4.97-4.945zM17.061 41.21h3v3.919h-3zM22.999 41.21h3v3.919h-3zM17.061 47.182h3v3.919h-3zM22.999 47.182h3v3.919h-3zM48.998 41.21h3v3.919h-3zM54.936 41.21h3v3.919h-3zM48.998 47.182h3v3.919h-3zM54.936 47.182h3v3.919h-3z"/></g>
-      </symbol>
-      <symbol id="food" viewBox="0 0 74 70">
-        <g fill="#81B3D2">
-          <path d="M69.854 46.71H4.051c-2.274 0-4.135 1.94-4.135 4.313v3.504c0 2.372 1.861 4.313 4.135 4.313h.93v1.053c0 5.536 4.341 10.065 9.648 10.065h44.646c5.306 0 9.648-4.529 9.648-10.065V58.84h.93c2.274 0 4.135-1.941 4.135-4.313v-3.504c0-2.373-1.86-4.313-4.134-4.313zm-3.848 13.184c0 3.871-3.019 7.021-6.73 7.021H14.629c-3.711 0-6.731-3.15-6.731-7.021v-1.053h58.107v1.053zm5.065-5.367c0 .688-.558 1.271-1.218 1.271H4.051c-.66 0-1.217-.582-1.217-1.271v-3.504c0-.688.558-1.271 1.217-1.271h65.802c.66 0 1.218.582 1.218 1.271v3.504zM15.634 38.406l5.323 4.059 5.326-4.059 5.328 4.059 5.328-4.059 5.328 4.059 5.329-4.059 5.327 4.059 5.33-4.06 5.336 4.059 6.194-4.712-1.72-2.459-4.474 3.403-5.336-4.057-5.33 4.056-5.327-4.057-5.329 4.057-5.328-4.057-5.328 4.057-5.328-4.057-5.325 4.057-5.323-4.057-5.327 4.057-4.467-3.401-1.721 2.457 6.188 4.714zM7.978 31.544H68.855c.041-.619.069-1.241.069-1.87 0-.394-.016-.783-.032-1.173C68.227 12.657 54.186 0 36.952 0 19.719 0 5.677 12.657 5.013 28.501c-.017.39-.032.78-.032 1.173 0 .629.028 1.251.07 1.87h2.927zM36.952 3.043c15.591 0 28.35 11.316 29.021 25.458H7.931c.673-14.142 13.43-25.458 29.021-25.458z"/>
-          <ellipse cx="36.952" cy="15.26" rx="1.945" ry="2.03"/>
-          <ellipse cx="29.172" cy="10.23" rx="1.946" ry="2.03"/>
-          <ellipse cx="44.732" cy="10.23" rx="1.946" ry="2.03"/>
-        </g>
-      </symbol>
-      <symbol id="souvenir" viewBox="0 0 64 76">
-        <path fill="#81B3D2" fill-rule="evenodd" d="M61.1 22.5H36.3c13.81-6.9 14.92-11.25 14.41-13.68-1.16-3.97-5.7-7.03-10-5.41-5.57 2.09-7.14 10.39-8.65 16.39-1.92-6.07-3.78-13.82-8.13-17.74A7.31 7.31 0 0 0 18.17.03c-4.02.36-9.8 5.38-7.45 10.98 2.25 5.38 9.68 8.78 14.57 11.5H2.88A2.88 2.88 0 0 0 0 25.36v11.32c0 1.58 1.3 2.87 2.88 2.87h.27V76H61V39.56h.1c1.6 0 2.89-1.29 2.89-2.87V25.37c0-1.58-1.3-2.87-2.88-2.87zM42.4 5.94c2.1-.3 4.99 1.3 5.26 3.21.4 2.76-3.4 5.26-5.09 6.42-2.52 1.75-4.93 2.65-7.28 4.06.88-3.7 2.54-13.01 7.11-13.69zm-22.88 9.97c-2.22-1.48-6.54-4.43-6.44-7.77.11-3.6 5.74-6.57 8.81-3.88 3.86 3.37 5.72 11.1 7.12 16.55-3.25-1.54-6.32-2.79-9.49-4.9zm5.97 57.12H6.14V39.56H25.5v33.47zm0-36.5H3.05v-11H25.5v11zm10.16 0v36.5h-7.17V25.54h7.17v10.98zm22.35 36.5H38.64V39.56h19.37v33.47zm2.92-36.5H38.64v-11h22.3v11z" clip-rule="evenodd"/>
-      </symbol>
       <symbol id="twitter" viewBox="0 0 17 15">
         <path fill="#FFF" d="M10.95.14a3.1 3.1 0 0 1 3.58 1.18c.67-.23 1.33-.48 2-.7 0 .86-.51 1.5-.85 1.76.69.17 1.3-.49 1.3-.49-.16 1-1 1.79-1.56 2.03C15.2 10.67 12.25 15.13 5.34 15H4.9c-.41 0-4.17-.46-4.9-1.89 2.27.2 3.9-.42 4.7-1.18-.97-.3-2.69-.47-2.99-2.95.35.11.57.23 1.2.12C1.7 8.25.36 7.53.44 5.33a1.9 1.9 0 0 0 1.34.47C1.09 5.56-.18 2.44.89.85c1.82 1.85 3.74 3.6 7.16 3.77.2-2.29 1.13-3.83 2.9-4.48z"/>
       </symbol>
@@ -246,9 +227,9 @@
       </symbol>
       <symbol id="calendar" viewBox="0 0 21 22">
         <path d="M19.251 2.025h-2.845V.648c0-.381-.294-.689-.656-.689-.363 0-.656.308-.656.689v1.377h-3.938V.648c0-.381-.294-.689-.655-.689-.363 0-.657.308-.657.689v1.377H5.906V.648c0-.381-.294-.689-.656-.689-.363 0-.657.308-.657.689v1.377H1.75C.784 2.025 0 2.847 0 3.862v16.302C0 21.179.784 22 1.75 22h17.501c.966 0 1.749-.821 1.749-1.836V3.862c0-1.015-.783-1.837-1.749-1.837zm.437 18.139a.448.448 0 0 1-.437.459H1.75a.45.45 0 0 1-.438-.459V3.862a.45.45 0 0 1 .438-.459h2.844v1.378c0 .381.294.689.657.689.362 0 .656-.308.656-.689V3.403h3.938v1.378c0 .381.294.689.657.689.361 0 .655-.308.655-.689V3.403h3.938v1.378c0 .381.293.689.656.689.362 0 .656-.308.656-.689V3.403h2.845c.241 0 .437.206.437.459v16.302z"/>
-        <path d="M4.594 8.225h2.625v2.066H4.594zM4.594 11.668h2.625v2.067H4.594zM4.594 15.112h2.625v2.066H4.594zM9.188 15.112h2.625v2.066H9.188zM9.188 11.668h2.625v2.067H9.188zM9.188 8.225h2.625v2.066H9.188zM13.781 15.112h2.625v2.066h-2.625zM13.781 11.668h2.625v2.067h-2.625zM13.781 8.225h2.625v2.066h-2.625z"/></svg>
+        <path d="M4.594 8.225h2.625v2.066H4.594zM4.594 11.668h2.625v2.067H4.594zM4.594 15.112h2.625v2.066H4.594zM9.188 15.112h2.625v2.066H9.188zM9.188 11.668h2.625v2.067H9.188zM9.188 8.225h2.625v2.066H9.188zM13.781 15.112h2.625v2.066h-2.625zM13.781 11.668h2.625v2.067h-2.625zM13.781 8.225h2.625v2.066h-2.625z"/>
       </symbol>
     </svg>
-
+    <script src="js/script.js"></script>
   </body>
 </html>

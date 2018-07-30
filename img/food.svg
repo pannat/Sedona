@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="74px" height="70px" viewBox="0 0 74 70" enable-background="new 0 0 74 70" xml:space="preserve">
-<g>
 	<path fill="#81B3D2" d="M69.854,46.71H59.275H14.629H4.051c-2.274,0-4.135,1.94-4.135,4.313v3.504c0,2.372,1.861,4.313,4.135,4.313
 		h0.93v1.053c0,5.536,4.341,10.065,9.648,10.065h44.646c5.306,0,9.648-4.529,9.648-10.065v-1.053h0.93
 		c2.274,0,4.135-1.941,4.135-4.313v-3.504C73.988,48.65,72.128,46.71,69.854,46.71z M66.006,59.894c0,3.871-3.019,7.021-6.73,7.021
@@ -21,5 +19,4 @@
 	<ellipse fill="#81B3D2" cx="36.952" cy="15.26" rx="1.945" ry="2.03"/>
 	<ellipse fill="#81B3D2" cx="29.172" cy="10.23" rx="1.946" ry="2.03"/>
 	<ellipse fill="#81B3D2" cx="44.732" cy="10.23" rx="1.946" ry="2.03"/>
-</g>
 </svg>

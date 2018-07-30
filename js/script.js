@@ -1,38 +1,70 @@
-(function(window, document) {
-  'use strict';
-  var file = 'img/sprite.svg',
-      revision = 1;
-  if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) return true;
-  var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
-    request,
-    data,
-    insertIT = function() {
-      document.body.insertAdjacentHTML('afterbegin', data);
-    },
-    insert = function() {
-      if (document.body) insertIT();
-      else document.addEventListener('DOMContentLoaded', insertIT);
-    };
-  if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
-    data = localStorage.getItem('inlineSVGdata');
-    if (data) {
-      insert();
-      return true;
-    }
-  }
-  try {
-    request = new XMLHttpRequest();
-    request.open('GET', file, true);
-    request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        data = request.responseText;
-        insert();
-        if (isLocalStorage) {
-          localStorage.setItem('inlineSVGdata', data);
-          localStorage.setItem('inlineSVGrev', revision);
+var searchLink = document.querySelector('.button--open-form');
+var searchPopup = document.querySelector('.modal');
+
+if (searchLink && searchPopup) {
+  var searchForm = searchPopup.querySelector('.form');
+  var inputDate = searchForm.querySelectorAll('.field__input');
+  var QuantityAdults = searchForm.querySelector('.spinner__input--required');
+  var spinnerButtonUp = searchForm.querySelectorAll('.spinner__button--up');
+  var spinnerButtonDown = searchForm.querySelectorAll('.spinner__button--down');
+  var inputQuantity = searchForm.querySelectorAll('.spinner__input');
+  var spinQuantity = function (increase, decrease, input) {
+    increase.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        input.value++;
+      }
+    );
+    decrease.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        if (input.value > 0) {
+          input.value--;
         }
       }
+    );
+  };
+
+  var highlightingEmptyField = function (field, inputSpinner) {
+    if (!field.value) {
+      field.style.outline = '2px solid #d28181';
     }
-    request.send();
-  } catch (e) {}
-}(window, document));
+
+    if (!inputSpinner.value || inputSpinner.value < 1) {
+      inputSpinner.style.outline = '2px solid #d28181';
+    }
+  };
+
+  searchLink.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      searchPopup.classList.toggle('modal--show');
+      if (!searchPopup.classList.contains('modal--show')) {
+        searchPopup.classList.remove('modal--error');
+      }
+    }
+  );
+
+  for (var i = 0; i < spinnerButtonUp.length; i++) {
+    spinQuantity(spinnerButtonUp[i], spinnerButtonDown[i], inputQuantity[i]);
+  }
+
+  searchForm.addEventListener('submit', function (evt) {
+        for (var j = 0; j < inputDate.length; j++) {
+          if (!inputDate[j].value || !QuantityAdults.value || QuantityAdults.value < 1) {
+            evt.preventDefault();
+            searchPopup.classList.remove('modal--error');
+            searchPopup.offsetWidth = searchPopup.offsetWidth;
+            searchPopup.classList.add('modal--error');
+            highlightingEmptyField(inputDate[j], QuantityAdults);
+          }
+        }
+      }
+    );
+
+  window.addEventListener('keydown', function (evt) {
+      if (evt.keyCode === 27) {
+        searchPopup.classList.remove('modal--show');
+        searchPopup.classList.remove('modal--error');
+      }
+    }
+  );
+
+}
